@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Create a JSON string from a JS Object</title>
+</head>
+<body>
+<p id="test">This is Week2 class</p>
+<script>
+/* const obj1= {name:"Krupa",age:20, city:"barrie"};
+console.log(obj1);
+//Stringify: convert a JS object into strings.
+const myJSON = JSON.stringify(obj1);
+console.log(myJSON); */
+
+//parse():changing string data into JS object
+
+const txt= '{"name":"Krupa","age":20, "city":"barrie"}';
+const obj = JSON.parse(txt);
+console.log(obj);
+document.getElementById("test").innerHTML= obj.name +", " +obj.age +", "
++ obj.city;
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p>The latitude is: <span id="lat"></span><br/>
+The longitude is: <span id="long"></span><br/>
+</p>
+<script>
+const iss_api="https://api.wheretheiss.at/v1/satellites/25544";
+
+async function getISS(){
+	
+	const response = await fetch(iss_api);
+	const data = await response.json()
+	
+	document.getElementById("lat").textContent = data.latitude;
+	document.getElementById("long").textContent = data.longitude;
+	
+	console.log(data.latitude);
+	console.log(data.longitude);
+}
+getISS();
+
+
+</script>
+
+</body>
+</html>
