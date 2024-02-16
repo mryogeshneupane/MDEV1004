@@ -7,7 +7,7 @@ Date: 2024/02/16
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const movieRoutes = require('./src/routes/booksRoute');
+const bookRoutes = require('./src/routes/booksRoute');
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
@@ -30,7 +30,7 @@ app.get('/', async function (req, res) {
     res.send("Welcome to the first express nodejs app");
 });
 
-app.use('/book', movieRoutes);
+app.use('/book', bookRoutes);
 
 const port = 3000;
 
