@@ -1,3 +1,9 @@
+/*
+Group Assignment 2: Use Express API to perform CRUD Operation  
+Yogesh Neupane: 200570557
+Roshan Khatri: 200575702
+Date: 2024/02/16
+ */
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');

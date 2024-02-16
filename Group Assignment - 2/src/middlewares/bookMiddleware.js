@@ -1,3 +1,10 @@
+/*
+Group Assignment 2: Use Express API to perform CRUD Operation  
+Yogesh Neupane: 200570557
+Roshan Khatri: 200575702
+Date: 2024/02/16
+ */
+
 //Middleware for creating request
 const logCreateRequest = (req, res, next) => {
     console.log(`Creating a new book with BookName: ${req.body.BookName}, ISBN: ${req.body.ISBN}, Rating:${req.body.Rating}, Author:${req.body.Author}, Genre${req.body.Genre} `);
