@@ -8,21 +8,14 @@ const movieController = require('../controllers/controller.js');
 const middleware = require('../middleware/middleware.js');
 const authController = require('../controllers/authcontroller.js');
 
-// router.get('/login', function (req, res) {
-//     res.render('login', { error: req.flash('error') });  
-// });
-
-// router.get('/register', (req, res) => {
-//     res.render('register');
-// });
-// Register a new user
+// Register user
 router.post('/register', authController.registerUser);
 
 // Log in a user
 router.post('/login', authController.loginUser);
 
 // Log out a user
-router.get('/logout', authController.logoutUser);
+router.post('/logout', authController.logoutUser);
 
 // Example protected route that requires authentication
 router.post('/protected', middleware.isAuthenticated, authController.protectedRoute);

@@ -60,16 +60,14 @@ exports.loginUser = (req, res, next) => {
 // Log out a user
 exports.logoutUser = (req, res, next) => {
     // Use req.logout with a callback function
-    req.logout((err) => {
+    req.logout(function(err) {
         if (err) {
             console.log(err);
-            req.flash('error', 'Internal Server Error');
-            return res.redirect('/login');
-        }
+        } 
+        req.flash('success', 'User is successfully logged out'); //logout message
+        res.redirect('/login'); // redirecting to login page after logout
     }
     )};
-
-    
      
     exports.protectedRoute = (req, res) => {
         console.log('Inside protectedRoute');

@@ -109,23 +109,10 @@ app.post('/login', passport.authenticate('local', {
     failureFlash: true
 }));
 
-// Route to handle logout
-app.post('/logout', (req, res) => {
-    req.logout(function(err) {
-        if (err) {
-            console.log(err);
-        }
-        
-        req.flash('success', 'User is successfully logged out'); //logout message
-        res.redirect('/login'); // redirecting to login page after logout
-    });
-});
-
-
-
 const authRoutes = require('./src/routes/routes');
 app.use('/auth', authRoutes);
 app.use('/movie', movieRoutes);
+app.post('/logout', authRoutes);
 
 const port = process.env.PORT || 3002;
 app.listen(port, () => {
